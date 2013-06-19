@@ -1,0 +1,24 @@
+
+
+<%#= @data %>
+<%#= @data.body %>
+<%#= @data.code %>
+<%#= @data.message %>
+<%#= @data.headers.inspect %>
+<ul>
+<% @data["popular"]["items_last_week"].each do |item| %>
+    <li>
+        <a href="<%= item["url"] %>">
+            <img src="<%= item["thumbnail"] %>" alt="">
+            <div class="title"><%= item["item"] %></div>
+        </a>
+        <div class="sales"><%= item["sales"] %></div>
+        <div class="user"><%= item["user"] %></div>
+        <div class="rating"><%= item["rating"] %></div>
+        <div class="cost"><%= item["cost"] %></div>
+        <div class="tags"><%= item["tags"] %></div>
+        <div class="category"><%= item["category"] %></div>
+        <a href="<%= item["live_preview_url"] %>">Live Preview</a>
+    </li>
+<% end %>
+</ul>
